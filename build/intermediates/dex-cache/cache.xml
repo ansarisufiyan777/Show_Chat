@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\Asna_Soft_Inc\MovieDiscussion\inventum\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="2e287b376b81299fed64b0a5f95032a113aee12d">
+        <dex dex="D:\Asna_Soft_Inc\MovieDiscussion\inventum\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_1a27720a64064bcfb46d2b81c021b2cb35a6a1e2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Asna_Soft_Inc\MovieDiscussion\inventum\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="D:\Asna_Soft_Inc\MovieDiscussion\inventum\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_42899310436fb120debbaab63d15c79abee55ea6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android\.android\build-cache\7629e6ce8b9dccd3b52d85204480116cb7e857e6\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="e6e5cb683c74a95072d8fbf47a997e64546fc284">
+        <dex dex="D:\Asna_Soft_Inc\MovieDiscussion\inventum\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c08f2a238946b990bc4d9071308a61e3bfed06cf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android\.android\build-cache\72ad1e9643d65e1b734166b11a31166b6ef91784\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="1c3b9743fe8bb166a90a7e98b9b9f1f8021d80cd">
+        <dex dex="D:\Asna_Soft_Inc\MovieDiscussion\inventum\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8fcc0a7cd9c660b471dd9aabe91c28fb139b604f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\org.androidannotations\androidannotations-api\3.2\89b33bb1e996eb2c4089f79d1b8651c71fe8e2d1\androidannotations-api-3.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="89b33bb1e996eb2c4089f79d1b8651c71fe8e2d1">
+        <dex dex="D:\Asna_Soft_Inc\MovieDiscussion\inventum\app\build\intermediates\transforms\dex\debug\folders\1000\10\androidannotations-api-3.2_accf73f877d1bd98df284c4fb94491919631931d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android\.android\build-cache\2ecaaed25be096586a5852c1941c2a7e87ea73bf\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="16caf9da5d06cd754ed22a53a9c1ef2a7e4713b1">
+        <dex dex="D:\Asna_Soft_Inc\MovieDiscussion\inventum\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a4c45386ef38e4b311de31c79245ac1f8a010180\classes.dex" />
+    </item>
+
+</items>

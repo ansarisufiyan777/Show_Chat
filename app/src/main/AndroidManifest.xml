@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="info.infiniteloops.discuss">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+            android:name="info.infiniteloops.discuss.App"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:roundIcon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <activity
+                android:name=".chat.ui.LoginActivity"
+                android:label="@string/app_name"
+                android:launchMode="singleTop"
+                android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="info.infiniteloops.discuss.activity.HomeActivity"
+            android:label="@string/title_activity_movies"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+                android:name="info.infiniteloops.discuss.activity.MoviesActivity"
+                android:label="@string/title_activity_movies"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name="info.infiniteloops.discuss.activity.TvActivity"
+                android:label="@string/title_activity_tv"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name="info.infiniteloops.discuss.activity.SearchActivity"
+                android:label="@string/title_activity_search"
+                android:launchMode="singleTop"
+                android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.app.searchable"
+                    android:resource="@xml/searchable"/>
+        </activity>
+        <activity
+                android:name="info.infiniteloops.discuss.activity.MovieDetailsActivity"
+                android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+                android:name="info.infiniteloops.discuss.activity.TvDetailsActivity"
+                android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+                android:name="info.infiniteloops.discuss.activity.PersonDetailsActivity"
+                android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+                android:name="info.infiniteloops.discuss.activity.SettingsActivity"
+                android:label="@string/title_activity_settings"
+                android:theme="@style/AppTheme"
+                android:parentActivityName="info.infiniteloops.discuss.activity.HomeActivity"
+                android:screenOrientation="portrait">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="info.infiniteloops.discuss.activity.HomeActivity"/>
+        </activity>
+
+        <activity
+                android:name="info.infiniteloops.discuss.activity.DiscoverActivity"
+                android:label="@string/title_activity_discover"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+                android:name="info.infiniteloops.discuss.activity.AboutActivity"
+                android:label="@string/title_activity_about"
+                android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="info.infiniteloops.discuss.activity.AboutActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name=".activity.VideosActivity"
+                android:label="@string/title_activity_videos"
+                android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+                android:name=".activity.VideoActivity"
+                android:theme="@style/AppTheme.NoActionBar"/>
+
+        <provider
+                android:name="info.infiniteloops.discuss.provider.MovieProvider"
+                android:authorities="info.infiniteloops.discuss"
+                android:exported="true"/>
+
+        <!--chat -->
+        <activity
+            android:name="info.infiniteloops.discuss.chat.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name="info.infiniteloops.discuss.chat.ui.RegisterActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Translucent" />
+        <activity
+            android:name="info.infiniteloops.discuss.chat.ui.ChatActivity"
+            android:screenOrientation="portrait"
+
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="info.infiniteloops.discuss.chat.ui.AddGroupActivity"
+            android:theme="@style/MyThemeNoActionbar"/>
+        <service android:name="info.infiniteloops.discuss.chat.service.FriendChatService"
+            android:exported="false"
+            android:persistent= "true" />
+    </application>
+
+</manifest>
