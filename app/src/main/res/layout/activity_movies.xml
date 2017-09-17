@@ -50,7 +50,9 @@
             android:id="@+id/navigation_view"
         android:background="@color/card_bg"
         app:itemTextColor="@color/off_white"
-            android:layout_width="wrap_content"
+        app:itemIconTint="@color/colorAccent"
+
+        android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
             app:menu="@menu/menu_navigation"

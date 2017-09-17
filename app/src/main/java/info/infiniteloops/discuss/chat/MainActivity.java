@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initFirebase() {
-        //Khoi tao thanh phan de dang nhap, dang ky
+        //Asna tao thanh phan de dang nhap, dang ky
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Khoi tao 3 tab
+     * Asna tao 3 tab
      */
     private void initTab() {
         tabLayout = (TabLayout) findViewById(R.id.tabs);

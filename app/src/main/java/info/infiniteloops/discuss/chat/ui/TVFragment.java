@@ -59,7 +59,8 @@ public class TVFragment extends Fragment implements SwipeRefreshLayout.OnRefresh
                              Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.chat_fragment_group, container, false);
 
-        listGroup = GroupDB.getInstance(getContext()).getListGroups();
+        //listGroup = GroupDB.getInstance(getContext()).getListGroups();
+        listGroup = new ArrayList<>();
         recyclerListGroups = (RecyclerView) layout.findViewById(R.id.recycleListGroup);
         mSwipeRefreshLayout = (SwipeRefreshLayout) layout.findViewById(R.id.swipeRefreshLayout);
         mSwipeRefreshLayout.setOnRefreshListener(this);
@@ -143,7 +144,7 @@ public class TVFragment extends Fragment implements SwipeRefreshLayout.OnRefresh
                         }
 
 
-                        listGroup.get(indexGroup).groupInfo.put("name", (String) mapGroupInfo.get("originalTitle"));
+                        listGroup.get(indexGroup).groupInfo.put("name", (String) mapGroupInfo.get("originalName"));
                         listGroup.get(indexGroup).groupInfo.put("admin", "Hellow World");
                         listGroup.get(indexGroup).groupInfo.put("poster",
                                 Utilities.POSTER_IMAGE_BASE_URL
@@ -200,7 +201,7 @@ class ListTVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.chat_rc_item_group, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.chat_rc_movie_group, parent, false);
         return new ItemTVViewHolder(view);
     }
 

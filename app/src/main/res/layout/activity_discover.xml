@@ -45,10 +45,12 @@
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"
         android:background="@color/card_bg"
-        app:itemTextColor="@color/off_white"
+        app:itemTextColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        app:itemIconTint="@color/colorAccent"
+
         app:menu="@menu/menu_navigation"
         app:headerLayout="@layout/nav_header"/>
 

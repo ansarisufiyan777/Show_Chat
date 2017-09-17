@@ -40,7 +40,7 @@ import info.infiniteloops.discuss.chat.util.ViewTarget;
 public class MovieFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
     private RecyclerView recyclerListGroups;
     private ArrayList<Group> listGroup;
-    private ListTVAdapter adapter;
+    private ListMovieAdapter adapter;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     public static final int REQUEST_EDIT_GROUP = 0;
 
@@ -59,13 +59,14 @@ public class MovieFragment extends Fragment implements SwipeRefreshLayout.OnRefr
                              Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.chat_fragment_group, container, false);
 
-        listGroup = GroupDB.getInstance(getContext()).getListGroups();
+        //listGroup = GroupDB.getInstance(getContext()).getListGroups();
+        listGroup = new ArrayList<>();
         recyclerListGroups = (RecyclerView) layout.findViewById(R.id.recycleListGroup);
         mSwipeRefreshLayout = (SwipeRefreshLayout) layout.findViewById(R.id.swipeRefreshLayout);
         mSwipeRefreshLayout.setOnRefreshListener(this);
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
         recyclerListGroups.setLayoutManager(layoutManager);
-        adapter = new ListTVAdapter(getContext(), listGroup);
+        adapter = new ListMovieAdapter(getContext(), listGroup);
         recyclerListGroups.setAdapter(adapter);
 
 
@@ -113,7 +114,7 @@ public class MovieFragment extends Fragment implements SwipeRefreshLayout.OnRefr
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == REQUEST_EDIT_GROUP && resultCode == Activity.RESULT_OK) {
             listGroup.clear();
-            ListTVAdapter.listFriend = null;
+            ListMovieAdapter.listFriend = null;
             GroupDB.getInstance(getContext()).dropDB();
             getListGroup();
         }
@@ -141,7 +142,7 @@ public class MovieFragment extends Fragment implements SwipeRefreshLayout.OnRefr
                         }
 
 
-                        listGroup.get(indexGroup).groupInfo.put("name", (String) mapGroupInfo.get("originalName"));
+                        listGroup.get(indexGroup).groupInfo.put("name", (String) mapGroupInfo.get("originalTitle"));
                         listGroup.get(indexGroup).groupInfo.put("admin", "Hellow World");
                         listGroup.get(indexGroup).groupInfo.put("poster",
                                 Utilities.POSTER_IMAGE_BASE_URL
@@ -164,7 +165,7 @@ public class MovieFragment extends Fragment implements SwipeRefreshLayout.OnRefr
     @Override
     public void onRefresh() {
         listGroup.clear();
-        ListTVAdapter.listFriend = null;
+        ListMovieAdapter.listFriend = null;
         GroupDB.getInstance(getContext()).dropDB();
         adapter.notifyDataSetChanged();
         getListGroup();
@@ -198,29 +199,29 @@ class ListMovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.chat_rc_item_group, parent, false);
-        return new ItemTVViewHolder(view);
+        View view = LayoutInflater.from(context).inflate(R.layout.chat_rc_movie_group, parent, false);
+        return new ItemMovieViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         final String groupName = listGroup.get(position).groupInfo.get("name");
         if(groupName != null && groupName.length() > 0) {
-            ((ItemTVViewHolder) holder).txtGroupName.setText(groupName);
-            ((ItemTVViewHolder) holder).iconGroup.setText((groupName.charAt(0) + "").toUpperCase());
+            ((ItemMovieViewHolder) holder).txtGroupName.setText(groupName);
+            ((ItemMovieViewHolder) holder).iconGroup.setText((groupName.charAt(0) + "").toUpperCase());
 
         }
-        ViewTarget viewTarget = new ViewTarget(((ItemTVViewHolder) holder).groupBG);
+        ViewTarget viewTarget = new ViewTarget(((ItemMovieViewHolder) holder).groupBG);
         Glide.with(context).load(listGroup.get(position).groupInfo.get("poster")).fitCenter().centerCrop().into(viewTarget);
 
-        ((ItemTVViewHolder) holder).btnMore.setOnClickListener(new View.OnClickListener() {
+        ((ItemMovieViewHolder) holder).btnMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view.setTag(new Object[]{groupName, position});
                 view.getParent().showContextMenuForChild(view);
             }
         });
-        ((RelativeLayout)((ItemTVViewHolder) holder).txtGroupName.getParent()).setOnClickListener(new View.OnClickListener() {
+        ((RelativeLayout)((ItemMovieViewHolder) holder).txtGroupName.getParent()).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(listFriend == null){

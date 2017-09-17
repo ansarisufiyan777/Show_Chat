@@ -4,15 +4,18 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.multidex.MultiDexApplication;
 import android.support.v7.app.AppCompatDelegate;
 
 import info.infiniteloops.discuss.util.Constants;
 
-public class App extends Application {
+public class App extends MultiDexApplication {
 
+/*
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     }
+*/
 
     @Override
     public void onCreate() {

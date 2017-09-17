@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -137,7 +138,7 @@ public class BaseActivity extends AppCompatActivity {
                             break;
 
                         case R.id.nav_menu_talk:
-                            createBackStack(new Intent(BaseActivity.this, MainActivity.class));
+                            startActivity(new Intent(BaseActivity.this, MainActivity.class));
                             break;
                         case R.id.nav_menu_donation:
                             DonationDialog dialog = DonationDialog.newInstance();
@@ -171,14 +172,31 @@ public class BaseActivity extends AppCompatActivity {
             finish();
         }
     }
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     public void onBackPressed() {
-        if (isNavDrawerOpen()) {
-            closeNavDraw();
-        } else {
+        if (doubleBackToExitPressedOnce) {
+            if (isNavDrawerOpen()) {
+                closeNavDraw();
+            } else {
+                super.onBackPressed();
+            }
             super.onBackPressed();
+            return;
         }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+
     }
 
     protected boolean isNavDrawerOpen() {
