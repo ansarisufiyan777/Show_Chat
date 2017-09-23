@@ -1,8 +1,9 @@
 package info.infiniteloops.discuss.chat.model;
 
 
+import java.io.Serializable;
 
-public class User {
+public class User implements Serializable {
     public String name;
     public String email;
     public String avata;

@@ -25,22 +25,22 @@ public class MovieGroup {
      * voteCount : 541
      */
 
-    private boolean adult;
-    private String backdropPath;
-    private int budget;
-    private String id;
-    private String originalLanguage;
-    private String originalTitle;
-    private String overview;
-    private double popularity;
-    private String posterPath;
-    private String releaseDate;
-    private int revenue;
-    private int runtime;
-    private String title;
-    private boolean video;
-    private double voteAverage;
-    private int voteCount;
+    public boolean adult;
+    public String backdropPath;
+    public int budget;
+    public String id;
+    public String originalLanguage;
+    public String originalTitle;
+    public String overview;
+    public double popularity;
+    public String posterPath;
+    public String releaseDate;
+    public int revenue;
+    public int runtime;
+    public String title;
+    public boolean video;
+    public double voteAverage;
+    public int voteCount;
 
     public boolean isAdult() {
         return adult;

@@ -69,9 +69,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    /**
-     * Khởi tạo các thành phần cần thiết cho việc quản lý đăng nhập
-     */
     private void initFirebase() {
         //Khoi tao thanh phan de dang nhap, dang ky
         mAuth = FirebaseAuth.getInstance();
@@ -159,9 +156,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Dinh nghia cac ham tien ich cho quas trinhf dang nhap, dang ky,...
-     */
+
     class AuthUtils {
         /**
          * Action register
@@ -332,20 +327,33 @@ public class LoginActivity extends AppCompatActivity {
             });
         }
 
-        /**
-         * Luu thong tin user info cho nguoi dung dang nhap
-         */
         void saveUserInfo() {
             Utilities.getFirebaseDBReference().child("/user/" + StaticConfig.UID).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    waitingDialog.dismiss();
-                    HashMap hashUser = (HashMap) dataSnapshot.getValue();
-                    User userInfo = new User();
-                    userInfo.name = (String) hashUser.get("name");
-                    userInfo.email = (String) hashUser.get("email");
-                    userInfo.avata = (String) hashUser.get("avata");
-                    SharedPreferenceHelper.getInstance(LoginActivity.this).saveUserInfo(userInfo);
+                    if(dataSnapshot.getValue() != null){
+
+                        waitingDialog.dismiss();
+                        HashMap hashUser = (HashMap) dataSnapshot.getValue();
+                        User userInfo = new User();
+                        userInfo.name = (String) hashUser.get("name");
+                        userInfo.email = (String) hashUser.get("email");
+                        userInfo.avata = (String) hashUser.get("avata");
+                        SharedPreferenceHelper.getInstance(LoginActivity.this).saveUserInfo(userInfo);
+                    }else{
+                        User newUser = new User();
+                        newUser.email = user.getEmail();
+                        newUser.name = user.getEmail().substring(0, user.getEmail().indexOf("@"));
+                        newUser.avata = StaticConfig.STR_DEFAULT_BASE64;
+                        Utilities.getFirebaseDBReference().child("user/" + user.getUid()).setValue(newUser)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                saveUserInfo();
+
+                            }
+                        });
+                    }
                 }
 
                 @Override
@@ -354,10 +362,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
         }
-
-        /**
-         * Khoi tao thong tin mac dinh cho tai khoan moi
-         */
         void initNewUserInfo() {
             User newUser = new User();
             newUser.email = user.getEmail();

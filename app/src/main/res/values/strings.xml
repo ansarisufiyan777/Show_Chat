@@ -18,7 +18,7 @@
     <string name="nav_menu_home">Home</string>
     <string name="nav_menu_movies">Movies</string>
     <string name="nav_menu_tv">TV Shows</string>
-    <string name="nav_menu_talk">Talk</string>
+    <string name="nav_menu_talk" translatable="false">Talk</string>
 
     <string name="nav_menu_celebs">Celebs</string>
     <string name="nav_menu_discover">Discover</string>
@@ -138,18 +138,18 @@
 
 
     <!--Chat -->
-    <string name="about">About</string>
-    <string name="login_success">login success</string>
-    <string name="login">LOGIN</string>
-    <string name="Username">Email</string>
-    <string name="Password">Password</string>
-    <string name="forgot_your_password">Forgot your password ?</string>
-    <string name="go">GO</string>
-    <string name="repeat_password">Repeat Password</string>
-    <string name="next">NEXT</string>
-    <string name="register">REGISTER</string>
+    <string name="about" translatable="false">About</string>
+    <string name="login_success" translatable="false">login success</string>
+    <string name="login" translatable="false">LOGIN</string>
+    <string name="Username" translatable="false">Email</string>
+    <string name="Password" translatable="false">Password</string>
+    <string name="forgot_your_password" translatable="false">Forgot your password ?</string>
+    <string name="go" translatable="false">GO</string>
+    <string name="repeat_password" translatable="false">Repeat Password</string>
+    <string name="next" translatable="false">NEXT</string>
+    <string name="register" translatable="false">REGISTER</string>
 
-    <string name="hint_username">Enter a new username</string>
-    <string name="hint_email_reset">Enter your email</string>
-    <string name="enter_group_name">Enter group name</string>
+    <string name="hint_username" translatable="false">Enter a new username</string>
+    <string name="hint_email_reset" translatable="false">Enter your email</string>
+    <string name="enter_group_name" translatable="false">Enter group name</string>
 </resources>

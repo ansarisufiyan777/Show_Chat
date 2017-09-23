@@ -265,9 +265,6 @@ public class FriendsFragment extends Fragment implements SwipeRefreshLayout.OnRe
             });
         }
 
-        /**
-         * Lay danh sach friend cua một UID
-         */
         private void checkBeforAddFriend(final String idFriend, Friend userInfo) {
             dialogWait.setCancelable(false)
                     .setIcon(R.drawable.ic_add_friend)
@@ -358,9 +355,6 @@ public class FriendsFragment extends Fragment implements SwipeRefreshLayout.OnRe
 
     }
 
-    /**
-     * Lay danh sach ban be tren server
-     */
     private void getListFriendUId() {
         Utilities.getFirebaseDBReference().child("friend/" + StaticConfig.UID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -384,9 +378,6 @@ public class FriendsFragment extends Fragment implements SwipeRefreshLayout.OnRe
         });
     }
 
-    /**
-     * Truy cap bang user lay thong tin id nguoi dung
-     */
     private void getAllFriendInfo(final int index) {
         if (index == listFriendID.size()) {
             //save list friend

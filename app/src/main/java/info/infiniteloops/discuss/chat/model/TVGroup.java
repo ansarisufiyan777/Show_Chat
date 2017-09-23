@@ -34,29 +34,29 @@ public class TVGroup {
      * voteCount : 502
      */
 
-    private String backdropPath;
-    private String firstAirDate;
-    private String homepage;
-    private String id;
-    private boolean inProduction;
-    private String lastAirDate;
-    private String name;
-    private int numberOfEpisodes;
-    private int numberOfSeasons;
-    private String originalLanguage;
-    private String originalName;
-    private String overview;
-    private double popularity;
-    private String posterPath;
-    private String status;
-    private double voteAverage;
-    private int voteCount;
-    private List<Integer> episodeRunTime;
-    private List<GenresBean> genres;
-    private List<String> languages;
-    private List<NetworksBean> networks;
-    private List<String> originCountry;
-    private List<SeasonsBean> seasons;
+    public String backdropPath;
+    public String firstAirDate;
+    public String homepage;
+    public String id;
+    public boolean inProduction;
+    public String lastAirDate;
+    public String name;
+    public int numberOfEpisodes;
+    public int numberOfSeasons;
+    public String originalLanguage;
+    public String originalName;
+    public String overview;
+    public double popularity;
+    public String posterPath;
+    public String status;
+    public double voteAverage;
+    public int voteCount;
+    public List<Integer> episodeRunTime;
+    public List<GenresBean> genres;
+    public List<String> languages;
+    public List<NetworksBean> networks;
+    public List<String> originCountry;
+    public List<SeasonsBean> seasons;
 
     public String getBackdropPath() {
         return backdropPath;
@@ -248,8 +248,8 @@ public class TVGroup {
          * name : Drama
          */
 
-        private String id;
-        private String name;
+        public String id;
+        public String name;
 
         public String getId() {
             return id;
@@ -274,8 +274,8 @@ public class TVGroup {
          * name : USA Network
          */
 
-        private String id;
-        private String name;
+        public String id;
+        public String name;
 
         public String getId() {
             return id;
@@ -302,10 +302,10 @@ public class TVGroup {
          * seasonNumber : 0
          */
 
-        private String airDate;
-        private String id;
-        private String posterPath;
-        private int seasonNumber;
+        public String airDate;
+        public String id;
+        public String posterPath;
+        public int seasonNumber;
 
         public String getAirDate() {
             return airDate;

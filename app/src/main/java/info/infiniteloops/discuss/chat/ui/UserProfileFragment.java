@@ -142,9 +142,7 @@ public class UserProfileFragment extends Fragment {
         return view;
     }
 
-    /**
-     * Khi click vào avatar thì bắn intent mở trình xem ảnh mặc định để chọn ảnh
-     */
+
     private View.OnClickListener onAvatarClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -234,10 +232,6 @@ public class UserProfileFragment extends Fragment {
         }
     }
 
-    /**
-     * Xóa list cũ và cập nhật lại list data mới
-     * @param myAccount
-     */
     public void setupArrayListInfo(User myAccount){
         listConfig.clear();
         Configuration userNameConfig = new Configuration(USERNAME_LABEL, myAccount.name, R.mipmap.ic_account_box);
@@ -360,9 +354,6 @@ public class UserProfileFragment extends Fragment {
             });
         }
 
-        /**
-         * Cập nhật username mới vào SharedPreference và thay đổi trên giao diện
-         */
         private void changeUserName(String newName){
             userDB.child("name").setValue(newName);
 

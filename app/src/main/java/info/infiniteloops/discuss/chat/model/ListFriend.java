@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 
 public class ListFriend {
-    private ArrayList<Friend> listFriend;
+    public ArrayList<Friend> listFriend;
 
     public ArrayList<Friend> getListFriend() {
         return listFriend;
